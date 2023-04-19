@@ -87,8 +87,53 @@
 // let pageNumber : string = '1';
 // let numericPageNumber: number = pageNumber as unknown as number;
 
-const someElement = document.querySelector('.foo');
-someElement.addEventListener('blur', (event) => {
-    const target = event.target as HTMLInputElement;
-    console.log('event', target.value);
-})
+// const someElement = document.querySelector('.foo');
+// someElement.addEventListener('blur', (event) => {
+//     const target = event.target as HTMLInputElement;
+//     console.log('event', target.value);
+// })
+
+// typescript classes
+
+interface userInterface {
+    getFullName() : string;
+}
+class User implements userInterface {
+    private firstName: string
+    protected lastName: string
+    readonly unchangeableName: string;
+    static readonly maxAge = 50;
+
+    constructor(firstName: string, lastName: string) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.unchangeableName = firstName;
+    }
+
+    getFullName(): string {
+        return this.firstName + ' ' + this.lastName;
+    }
+}
+
+// class inheritance
+class Admin extends User {
+    private editor: string;
+
+    setEditor(editor: string): void {
+        this.editor = editor;
+    }
+
+    getEditor(): string {
+        return this.editor;
+    }
+}
+
+const user = new User('John', 'Williams');
+console.log(user.getFullName());
+console.log(User.maxAge);
+const admin = new Admin('Bill', 'Weasley');
+
+
+
+
+
