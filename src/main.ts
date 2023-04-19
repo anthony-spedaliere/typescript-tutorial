@@ -63,3 +63,26 @@
 
 // let user: UserInterface | null = null;
 
+// void is a set of undefined and null
+const doSomething = (): void => {
+    console.log('something');
+}
+
+// any keyword can return any type - essentially turns off typescript 
+let foo: any = 'foo';
+
+// type never - a function that never ends?
+const doSomethingElse = (): never => {
+    throw 'never';
+}
+
+// type unknown
+let vAny: any = 10;
+let vUnknown: unknown = 10;
+
+let s1: string = vAny;
+
+// type assertion - convert one type to another
+let s2: string = vUnknown as string;
+let pageNumber : string = '1';
+let numericPageNumber: number = pageNumber as unknown as number;
