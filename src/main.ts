@@ -93,47 +93,71 @@
 //     console.log('event', target.value);
 // })
 
-// typescript classes
+// // typescript classes
 
-interface userInterface {
-    getFullName() : string;
-}
-class User implements userInterface {
-    private firstName: string
-    protected lastName: string
-    readonly unchangeableName: string;
-    static readonly maxAge = 50;
+// interface userInterface {
+//     getFullName() : string;
+// }
+// class User implements userInterface {
+//     private firstName: string
+//     protected lastName: string
+//     readonly unchangeableName: string;
+//     static readonly maxAge = 50;
 
-    constructor(firstName: string, lastName: string) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.unchangeableName = firstName;
-    }
+//     constructor(firstName: string, lastName: string) {
+//         this.firstName = firstName;
+//         this.lastName = lastName;
+//         this.unchangeableName = firstName;
+//     }
 
-    getFullName(): string {
-        return this.firstName + ' ' + this.lastName;
-    }
-}
+//     getFullName(): string {
+//         return this.firstName + ' ' + this.lastName;
+//     }
+// }
 
-// class inheritance
-class Admin extends User {
-    private editor: string;
+// // class inheritance
+// class Admin extends User {
+//     private editor: string;
 
-    setEditor(editor: string): void {
-        this.editor = editor;
-    }
+//     setEditor(editor: string): void {
+//         this.editor = editor;
+//     }
 
-    getEditor(): string {
-        return this.editor;
-    }
-}
+//     getEditor(): string {
+//         return this.editor;
+//     }
+// }
 
-const user = new User('John', 'Williams');
-console.log(user.getFullName());
-console.log(User.maxAge);
-const admin = new Admin('Bill', 'Weasley');
+// const user = new User('John', 'Williams');
+// console.log(user.getFullName());
+// console.log(User.maxAge);
+// const admin = new Admin('Bill', 'Weasley');
 
+// // typescript generics
+// const addId = <T extends object>(obj: T) => {
+//     const id = Math.random().toString(16);
+//     return {
+//         ...obj,
+//         id
+//     }
+// }
 
+// interface UserInterface<T> {
+//     name: string;
+//     data: T;
+// }
+
+// const user: UserInterface<{meta: string}> = {
+//     name: 'Jack',
+//     data: {
+//         meta: 'foo'
+//     },
+// }
+
+// const user2: UserInterface<string[]> = {
+//     name: 'John',
+//     data: ['foo', 'bar']
+// }
 
 
 
