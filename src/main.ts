@@ -159,5 +159,25 @@
 //     data: ['foo', 'bar']
 // }
 
+// // enums
+// const statuses = {
+//     notStarted: 0,
+//     inProgress: 1,
+//     done: 2,
+// }
 
+// enum StatusEnum {
+//     NotStarted = 'notStarted',
+//     InProgress = 'inProgress',
+//     Done = 'done'
+// }
+
+// interface Task {
+//     id: string;
+//     status: StatusEnum;
+// }
+
+// const notStartedStatus: StatusEnum = StatusEnum.NotStarted;
+
+// console.log(notStartedStatus);
 
